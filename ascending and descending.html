@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sort Numbers</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color:#d3d3d3;
+            padding:20px;
+        }
+
+        .row{
+            display:flex;
+            gap:15px;
+            margin-bottom:20px;
+        }
+
+        .box{
+            width:200px;
+        }
+
+        .box label{
+            display:block;
+            text-align:center;
+            font-weight:bold;
+            margin-bottom:10px;
+        }
+
+        .box input{
+            width:100%;
+            height:35px;
+        }
+
+        button{
+            padding:10px;
+            margin-right:10px;
+        }
+
+        hr{
+            margin:30px 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<h1>Input Section</h1>
+
+<p>
+Enter a number in each of the boxes below and then click one of the buttons
+below to either sort the numbers into ascending order or descending order. The sorted numbers will be placed in the output section.
+</p>
+
+<div class="row">
+
+    <div class="box">
+        <label>A</label>
+        <input type="number" id="n1">
+    </div>
+
+    <div class="box">
+        <label>B</label>
+        <input type="number" id="n2">
+    </div>
+
+    <div class="box">
+        <label>C</label>
+        <input type="number" id="n3">
+    </div>
+
+</div>
+
+<button onclick="ascending()">
+Sort in Ascending Order
+</button>
+
+<button onclick="descending()">
+Sort in Descending Order
+</button>
+
+<hr>
+
+<h1>Output Section</h1>
+
+<p>
+Once you click one of the buttons, the numbers in boxes A, B and C will be sorted accordingly. The sorted numbers will then be placed in these boxes.
+</p>
+
+<div class="row">
+
+    <div class="box">
+        <input type="text" id="output1" readonly>
+    </div>
+
+    <div class="box">
+        <input type="text" id="output2" readonly>
+    </div>
+
+    <div class="box">
+        <input type="text" id="output3" readonly>
+    </div>
+
+</div>
+
+<script>
+
+function ascending(){
+
+let arr = [
+Number(document.getElementById("n1").value),
+Number(document.getElementById("n2").value),
+Number(document.getElementById("n3").value)
+];
+
+arr.sort((a,b)=>a-b);
+
+document.getElementById("output1").value=arr[0];
+document.getElementById("output2").value=arr[1];
+document.getElementById("output3").value=arr[2];
+}
+
+function descending(){
+
+let arr = [
+Number(document.getElementById("n1").value),
+Number(document.getElementById("n2").value),
+Number(document.getElementById("n3").value)
+];
+
+arr.sort((a,b)=>b-a);
+
+document.getElementById("output1").value=arr[0];
+document.getElementById("output2").value=arr[1];
+document.getElementById("output3").value=arr[2];
+}
+
+</script>
+
+</body>
+</html>

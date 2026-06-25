@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multiplication and division</title>
+</head>
+<body>
+    1st Number:
+    <input type="number" id="num1" value="12"><br>
+
+    2st Number:
+    <input type="number" id="num2" value="10"><br><br>
+
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+
+    <h3>The Result Is:</h3>
+    <p id="result">120</p>
+
+    <script>
+        function multiply(){
+            let a = document.getElementaryId("num1").value;
+            let b = document.getElementaryId("num2").value;
+
+            document.getElementById("result").innerHTML = a*b;
+        }
+        function divide(){
+            let a = document.getElementaryId("num1").value;
+            let b = document.getElementaryId("num2").value;
+
+            document.getElementById("result").innerHTML = a/b;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pizza Order Form</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #fcf8f8;
+        }
+
+        .container{
+            width: 850px;
+            margin: 20px auto;
+            border: 1px solid gray;
+            padding: 15px;
+            background-color: rgb(196, 195, 195);
+        }
+
+        h2{
+            text-align: center;
+        }
+        
+        fieldset{
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .row{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .row label{
+            width: 150px;
+        }
+
+        input[type="text"],input[type="email"],input[type="password"], input[type="number"], select, textarea{
+            width: 200px;
+            padding: 5px;
+        }
+
+        input[type="radio"], input[type="checkbox"]{
+            width: auto;
+        }
+
+        textarea{
+            resize: none;
+        }
+
+        input[type="submit"], input[type="reset"]{
+            padding: 8px 15px;
+            margin-right: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <fieldset class="mainfield">
+        <legend style="text-align: center;">PIZZA ORDER FORM</legend>
+        
+        <form onsubmit="return validateForm()">
+            <fieldset>
+                <legend>Delivery Address</legend>
+                <div class="row">
+                    <label>Full Name:</label>
+                    <input type="text" id="fullname" value="Full Name"> 
+                    <label>Street Address:</label> 
+                    <input type="text" id="address" value="Address">
+                </div>
+                <div class="row">
+                    <label>Phone:</label>
+                    <input type="text" id="phone" value="Phone">
+                    <label>Email:</label>
+                    <input type="email" id="email" value="Emai">
+                </div>
+                <div class="row">
+                    <label>Password:</label>
+                    <input type="password" id="password" value="Password">
+                </div>
+
+            </fieldset>
+            <fieldset>
+                <legend>Payment Information</legend>
+                <div class="row">
+                    <label>Card Type:</label>
+                    <input type="card type" id="card type" value="Visa">
+                
+                    <label>Card Number:</label>
+                    <input type="text" id="cardnumber" value="Card Number">
+                </div>
+                
+                <div class="row">
+                    <label>Name on Card:</label>
+                    <input type="text" id="cardname" value="Name">
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Customize Your Pizza</legend>
+                <div class="row">
+                    <label>Pizza Size:</label>
+                    <select>
+                        <option>Large</option>
+                        <option>Medium</option>
+                        <option>Small</option>
+                    </select>
+                    <label>Quantity:</label>
+                    <input type="number">
+                </div>
+                <div class="row">
+                    <label>Spices:</label>
+                    <input type="checkbox"> Black Pepper
+                    <input type="checkbox"> Bell Peppers
+                    <input type="checkbox"> Mayonnaise
+                </div>
+                
+                <div class="row">
+                    <label>Other Requirements:</label>
+                    <textarea rows="4"></textarea>
+                    <input type="radio" name="meat" value="fish"> Meat
+                    <input type="radio" name="fish" value="fish"> Fish
+                    <input type="radio" name="cow" value="meat"> Cow
+                    <input type="radio" name="chicken" value="chicken"> Chicken
+                </div>
+            </fieldset>
+            <input type="reset" value="Clear Order">
+            <input type="submit" value="Place Order">
+        
+        </fieldset>
+    </form>
+
+</div>
+
+<script>
+
+function validateForm(){
+
+let fullname =
+document.getElementById("fullname").value;
+
+if(fullname==""){
+alert("Please enter full name");
+return false;
+}
+
+let address =
+document.getElementById("address").value;
+
+if(address==""){
+alert("Please enter address");
+return false;
+}
+
+let phone =
+document.getElementById("phone").value;
+
+if(!/^\d{10}$/.test(phone)){
+alert("Phone number must be exactly 10 digits");
+return false;
+}
+
+let email =
+document.getElementById("email").value;
+
+if(email==""){
+alert("Enter valid email");
+return false;
+}
+
+let password =
+document.getElementById("password").value;
+
+if(password.length < 5 ||
+password.length > 15){
+
+alert("Password must be between 5 and 15 characters");
+return false;
+}
+
+let card =
+document.querySelector('input[name="card"]:checked');
+
+if(!card){
+alert("Select card type");
+return false;
+}
+
+let cardnumber =
+document.getElementById("cardnumber").value;
+
+if(cardnumber==""){
+alert("Enter card number");
+return false;
+}
+
+let cardname =
+document.getElementById("cardname").value;
+
+if(cardname==""){
+alert("Enter card holder name");
+return false;
+}
+
+alert("Form Submitted Successfully");
+
+return true;
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>country population</title>
+</head>
+
+<body>
+
+<h2>Country Population</h2>
+
+<p id="output"></p>
+
+
+<script>
+
+
+
+let populations = [60, 55, 331, 1441];
+
+function percentageOfWorld1(population)
+{
+    let worldPopulation = 7900;
+
+    return (population / worldPopulation) * 100;
+}
+
+
+let fourCountries = populations.length === 4;
+
+
+let percentageOfWorld2 = (population) =>
+{
+    let worldPopulation = 7900;
+
+    return (population / worldPopulation) * 100;
+}
+
+
+document.getElementById("output").innerHTML =
+"Array has 4 countries: " + fourCountries + "<br><br>" +
+
+"Tanzania: " + percentageOfWorld1(60).toFixed(2) + "%<br>" +
+
+"Kenya: " + percentageOfWorld2(55).toFixed(2) + "%<br>" +
+
+"USA: " + percentageOfWorld1(331).toFixed(2) + "%<br>" +
+
+"China: " + percentageOfWorld2(1441).toFixed(2) + "%";
+
+
+</script>
+
+</body>
+</html>

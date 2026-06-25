@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Send Message</title>
+
+<style>
+body{
+font-family:Arial;
+}
+
+.box{
+width:350px;
+background:#eee;
+padding:20px;
+margin:auto;
+}
+
+input,textarea{
+width:100%;
+padding:8px;
+margin:5px;
+}
+
+button{
+width:100%;
+background:black;
+color:white;
+padding:10px;
+border:none;
+}
+
+#error{
+color:red;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Send Message</h2>
+
+<form id="myForm">
+
+Name:
+<input type="text" id="name" value="Laurence Svekis">
+
+Email:
+<input type="email" id="email" value="gappscourses+100@gmail.com">
+
+Message:
+<textarea id="message">Hello World</textarea>
+
+<p id="error"></p>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+
+<script>
+
+document.getElementById("myForm").onsubmit=function(e){
+
+e.preventDefault();
+
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let message=document.getElementById("message").value;
+
+
+if(name=="" || email=="" || message=="")
+{
+document.getElementById("error").innerHTML="Please fill all fields";
+}
+
+else
+{
+
+let formData={
+Name:name,
+Email:email,
+Message:message
+};
+
+
+console.log(formData);
+
+document.getElementById("error").innerHTML=
+"Message Sent Successfully";
+
+}
+
+}
+
+</script>
+
+
+</body>
+</html>

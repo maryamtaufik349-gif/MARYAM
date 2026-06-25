@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>my country</title>
+</head>
+
+<body>
+
+<h2>My Country</h2>
+
+<p id="output"></p>
+
+
+<script>
+
+
+let myCountry = {
+
+    country: "Tanzania",
+    capital: "Dodoma",
+    language: "Swahili",
+    population: 60000000,
+    neighbours: ["Kenya","Uganda","Rwanda"],
+
+
+    describe: function()
+    {
+        return this.country + 
+        " has " + this.population +
+        " people, capital city is " +
+        this.capital +
+        " and speaks " + this.language;
+    }
+
+};
+
+
+myCountry.population += 2000000;
+
+
+myCountry["population"] -= 1000000;
+
+
+
+myCountry.checkIsland = function()
+{
+    return this.isIsland ? 
+    "Island" : 
+    "No island";
+};
+
+
+myCountry.isIsland = false;
+
+
+document.getElementById("output").innerHTML =
+
+myCountry.describe() + "<br><br>" +
+
+"Neighbours: " + myCountry.neighbours.join(", ") 
++ "<br><br>" +
+
+myCountry.checkIsland();
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>World Population</title>
+</head>
+
+<body>
+
+<h2>Population Percentage</h2>
+
+<p id="output"></p>
+
+
+<script>
+
+
+function percentageOfWorld1(population)
+{
+    let worldPopulation = 7900;
+
+    return (population / worldPopulation) * 100;
+}
+
+
+
+let china = percentageOfWorld1(1441);
+
+let tanzania = percentageOfWorld1(60);
+
+let kenya = percentageOfWorld1(55);
+
+let percentageOfWorld2 = (population) =>
+{
+    let worldPopulation = 7900;
+
+    return (population / worldPopulation) * 100;
+}
+
+
+let usa = percentageOfWorld2(331);
+
+
+
+document.getElementById("output").innerHTML =
+"China: " + china.toFixed(2) + "% <br>" +
+"Tanzania: " + tanzania.toFixed(2) + "% <br>" +
+"Kenya: " + kenya.toFixed(2) + "% <br>" +
+"USA: " + usa.toFixed(2) + "%";
+
+
+</script>
+
+
+</body>
+</html>

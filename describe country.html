@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Describe Country</title>
+</head>
+
+<body>
+
+<h2>Country Information</h2>
+
+<p id="output"></p>
+
+
+<script>
+
+function describeCountry(country, population, capitalCity)
+{
+    return country + " has " + population + 
+    " million people and its capital city is " + capitalCity;
+}
+
+
+
+let country1 = describeCountry("Finland", 6, "Helsinki");
+
+let country2 = describeCountry("Tanzania", 60, "Dodoma");
+
+let country3 = describeCountry("Kenya", 55, "Nairobi");
+
+
+
+document.getElementById("output").innerHTML =
+country1 + "<br><br>" +
+country2 + "<br><br>" +
+country3;
+
+
+</script>
+
+
+</body>
+</html>
